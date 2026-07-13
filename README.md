@@ -1,4 +1,4 @@
-# The Toolsmith's Course
+# Mac Dev Environment 101
 
 A hands-on, self-guided course that teaches a teenager the core tools of software development — the macOS setup, the command line, a Linux virtual machine, the developer toolkit (git, Python, Node), and modern AI tools — by actually using them to build and publish real things.
 

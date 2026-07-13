@@ -1,5 +1,5 @@
 {
-  "title": "The Toolsmith's Course",
+  "title": "Mac Dev Environment 101",
   "subtitle": "Build your own developer environment, one tool at a time.",
   "lessons": [
     { "file": "00-welcome.md",            "title": "00 · Welcome & Your First Repo",   "minutes": 30 },
