@@ -134,10 +134,10 @@ Nobody memorizes all the flags. Knowing how to *look them up* is the real skill.
 Do this entirely in the terminal, no mouse:
 
 1. In `~/projects`, make a folder `cli-practice` and `cd` into it.
-2. Create three files: `red.txt`, `green.txt`, `blue.txt`, each containing the name of the color (use `echo` and `>`).
-3. Make a folder called `colors` and move all three `.txt` files into it with a single command using a wildcard.
+2. Create three files: `red.txt`, `green.txt`, `blue.txt`, each containing the name of the colour (use `echo` and `>`).
+3. Make a folder called `colours` and move all three `.txt` files into it with a single command using a wildcard.
 4. Use `cat` with a wildcard to print all three files at once.
-5. Use a pipe to count how many files are in the `colors` folder.
+5. Use a pipe to count how many files are in the `colours` folder.
 6. Look up what the `-h` flag does for `ls` using `ls --help` (hint: try `ls -lh` afterward).
 
 Mark complete when you can do all six without looking back at the examples. Next, we build a whole separate computer to practice on.

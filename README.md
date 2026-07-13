@@ -59,7 +59,7 @@ That's it — the course is live and free to host.
 
 - Lesson text lives in `lessons/*.md` — plain Markdown, edit in any editor.
 - To add, remove, or reorder lessons, edit `lessons.json` (the sidebar reads from it).
-- Styling and behavior are all in `index.html` (inline CSS + a little JavaScript).
+- Styling and behaviour are all in `index.html` (inline CSS + a little JavaScript).
 - The `.nojekyll` file tells GitHub Pages to serve the files as-is.
 
 After any change: `git add . && git commit -m "..." && git push`, and Pages updates automatically.

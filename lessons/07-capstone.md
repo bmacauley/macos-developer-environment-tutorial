@@ -10,7 +10,7 @@ Time to prove it to yourself. In this final lesson you'll combine every tool fro
 
 It touches everything:
 
-- **Terminal & files** (Lesson 02) to create and organize it.
+- **Terminal & files** (Lesson 02) to create and organise it.
 - **The VM** (Lessons 03–04) as your safe development machine.
 - **Git, GitHub, an editor, and maybe Python/Node** (Lessons 00, 05).
 - **AI** (Lesson 06) as your on-call helper when you get stuck.
@@ -108,7 +108,7 @@ You now have the foundation. Pick whatever pulls you:
 - **Go deeper on a language.** Build something small and real in Python (a script that automates a chore) or JavaScript (an interactive web page). Projects teach more than tutorials.
 - **Learn more git.** Try contributing to an open-source project — even fixing a typo in someone's docs teaches the "pull request" workflow real teams use.
 - **Explore the cloud.** The SSH skills from Lesson 04 transfer directly to renting a real Linux server. Many providers have free tiers for learning.
-- **Automate your setup.** Write a script that installs all your favorite Homebrew tools at once — your own "new Mac in one command."
+- **Automate your setup.** Write a script that installs all your favourite Homebrew tools at once — your own "new Mac in one command."
 - **Build with AI.** Now that you understand the tools, use agentic AI to move faster on bigger projects — always following the golden rule from Lesson 06.
 - **Improve this course.** It's your repo now. Add a lesson, fix something, restyle the site. Teaching (even your future self) is the best way to lock in what you know.
 

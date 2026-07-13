@@ -10,7 +10,7 @@ You can do this lesson on your **Mac**, in your **VM**, or both. Doing it in the
 
 ## A real code editor: VS Code
 
-You installed VS Code in Lesson 01 (`brew install --cask visual-studio-code`). It's a free editor that understands code — coloring it, catching mistakes, and running it. Open your course folder in it:
+You installed VS Code in Lesson 01 (`brew install --cask visual-studio-code`). It's a free editor that understands code — colouring it, catching mistakes, and running it. Open your course folder in it:
 
 ```bash
 cd ~/projects/tools-course     # or wherever you cloned it
