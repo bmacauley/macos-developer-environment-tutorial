@@ -6,6 +6,7 @@
     { "file": "01-mac-foundation.md",      "title": "01 · The Mac Foundation",          "minutes": 45 },
     { "file": "02-command-line-basics.md", "title": "02 · Command-Line Basics",          "minutes": 60 },
     { "file": "03-setup-the-vm.md",        "title": "03 · Build Your Lab (the VM)",     "minutes": 60 },
+    { "file": "03b-mac-vm.md",             "title": "03b · Bonus: A macOS VM",          "minutes": 45 },
     { "file": "04-linux-admin.md",         "title": "04 · Running a Linux Machine",     "minutes": 75 },
     { "file": "05-dev-tools.md",           "title": "05 · The Developer Toolkit",       "minutes": 90 },
     { "file": "06-ai-and-claude-tools.md", "title": "06 · AI & Claude Tools",           "minutes": 60 },
