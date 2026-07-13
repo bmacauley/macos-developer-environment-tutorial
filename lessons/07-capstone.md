@@ -80,7 +80,16 @@ git commit -m "My first personal website"
 ## Step 4 — Publish to GitHub
 
 1. On [github.com](https://github.com), create a **new repository** called `my-site` (leave it empty — no README).
-2. Connect your local repo to it and push. Use the **SSH** address from Lesson 05:
+2. Connect your local repo to it and push, using the **SSH** address.
+
+> **First push from the VM?** The SSH key you made in Lesson 05 lives on your **Mac** — this VM is a *different* machine, so GitHub doesn't recognise it yet. Set up a key here too (same steps as Lesson 05, but run inside the VM):
+>
+> ```bash
+> ssh-keygen -t ed25519 -C "your-github-email@example.com"   # press Enter through every prompt
+> cat ~/.ssh/id_ed25519.pub                                   # copy the whole line it prints
+> ```
+>
+> Add it on GitHub under **Settings → SSH and GPG keys → New SSH key**, paste, and save. Confirm with `ssh -T git@github.com` (it should greet you by name). Now the push below will work.
 
 ```bash
 git branch -M main

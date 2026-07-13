@@ -37,7 +37,7 @@ An operating system is installed from an **ISO file** — a single file that rep
 
 1. Open **UTM** and click the **+** to create a new VM, then choose **Virtualize** (not Emulate — virtualizing is much faster and correct for a matching ARM/Intel guest).
 2. Choose **Linux**.
-3. On an Apple Silicon Mac, tick **Use Apple Virtualization** if offered — it's smoother on modern macOS.
+3. **Leave "Use Apple Virtualization" *unticked*.** It sounds appealing, but in that mode UTM **can't take snapshots** — and snapshots are the safety net you'll lean on for the whole course (Step 4). The standard mode supports them, so stick with the default.
 4. **Boot ISO image** → Browse → select the Ubuntu `.iso` you downloaded.
 5. **Memory:** give it **2048 MB** (2 GB). A server has no desktop to run, so it needs far less than a graphical Ubuntu — 4 GB is generous if you have RAM to spare.
 6. **CPU cores:** the default is fine (2 is plenty for a server).
@@ -65,7 +65,7 @@ When it reboots, you'll land on a plain text **login prompt** — no desktop, no
 
 A **snapshot** saves the VM's *entire* current state so you can jump back to it. Before trying anything risky, take one. If it goes wrong, restore and it's like it never happened.
 
-In UTM, with the VM selected, look for the snapshot option (in newer UTM it's in the VM's toolbar/menu while running, or right-click the VM). Take one now and name it `fresh-install`. That's your clean starting point for the whole course.
+In UTM, with the VM selected, look for the snapshot option (in newer UTM it's in the VM's toolbar/menu while running, or right-click the VM). Take one now and name it `fresh-install`. That's your clean starting point for the whole course. (This works because you left Apple Virtualization off back in Step 2 — that's the trade-off that keeps snapshots available.)
 
 > Think of snapshots like save points. Take one *before* the boss fight (a risky command), not after you've already lost.
 
