@@ -111,13 +111,20 @@ sudo systemctl start nginx       # start it
 sudo systemctl enable nginx      # start automatically on boot
 ```
 
-With nginx running, open Firefox *inside the VM* and go to `http://localhost`. You'll see the "Welcome to nginx" page — a real web server you started, running on your own Linux machine. That's the same software powering a huge chunk of the internet.
+Your server has no browser, so ask for the page from the command line instead:
+
+```bash
+curl http://localhost                 # fetch the page and print it
+curl -s http://localhost | head -n 5  # just the first few lines
+```
+
+You'll see the raw HTML of the "Welcome to nginx" page — a real web server you started, running on your own Linux machine, answering your request. `curl` is how you talk to web servers without a browser, and it's the same software powering a huge chunk of the internet.
 
 ## Reaching the VM from your Mac with SSH
 
 **SSH** ("secure shell") lets you control one computer's terminal from another over the network. It's how engineers manage servers all over the world. Let's SSH from your **Mac's** terminal into your **VM**.
 
-Inside the VM, install and enable the SSH server, then find the VM's address:
+Inside the VM, make sure the SSH server is installed and running, then find the VM's address. (If you ticked **Install OpenSSH server** back in Lesson 03, it's already here — these commands just confirm it, and do no harm if it's already set up.)
 
 ```bash
 sudo apt install -y openssh-server
@@ -144,7 +151,7 @@ Inside your VM:
 1. Update the system and install `git`, `htop`, and `neofetch`. Screenshot `neofetch`.
 2. Create a file, remove your own write permission with `chmod`, try to edit it and watch it refuse, then restore write access.
 3. Create a second user, give them sudo rights, switch into their account, and switch back.
-4. Install nginx and load its welcome page in the VM's browser. Then stop the service and confirm the page no longer loads.
+4. Install nginx and load its welcome page with `curl http://localhost`. Then stop the service and confirm `curl` can no longer reach it.
 5. **Boss level:** SSH from your Mac's terminal into your VM and run a command there.
 
 Mark complete when you've SSH'd in successfully. You now run a Linux machine. Next, the tools you'll build things *with*.

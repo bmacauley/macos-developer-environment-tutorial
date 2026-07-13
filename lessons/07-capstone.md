@@ -19,7 +19,7 @@ And at the end there's a real URL you can send to a friend.
 
 ## Step 1 — Set up the project
 
-Work inside your **VM** (take a snapshot first — old habit, good habit). Make sure git, and a text editor are available (`sudo apt install -y git`; you can edit with VS Code, `nano`, or install it in the VM):
+Work inside your **VM** (take a snapshot first — old habit, good habit). Make sure git and a text editor are available (`sudo apt install -y git`; on a server you'll edit right in the console with `nano`, which is already installed — or `vim` if you're feeling brave):
 
 ```bash
 mkdir -p ~/projects/my-site
@@ -56,12 +56,15 @@ Create an `index.html`. Start simple — you can make it fancier later:
 </html>
 ```
 
-Preview it: open the file in the VM's browser (`firefox index.html`) or, to feel like a pro, serve it and view it:
+Preview it: your server has no browser, so serve the page and fetch it with `curl` to confirm it's really there:
 
 ```bash
-python3 -m http.server 8000    # a tiny web server, powered by Python
-# now open http://localhost:8000 in the VM's browser; Ctrl+C to stop
+python3 -m http.server 8000 &    # start a tiny web server in the background
+curl http://localhost:8000       # print your page's HTML to the screen
+kill %1                          # stop the background server
 ```
+
+> The real *visual* preview comes at the end of this lesson: once it's live on GitHub Pages, you'll open the URL in your **Mac's** browser and see it rendered for real.
 
 > **Optional flex:** add a second page, or use `npx` to pull in a tool, or write a small Python script that generates part of the page. Stretch as far as you're curious.
 

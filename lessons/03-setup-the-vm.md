@@ -26,8 +26,10 @@ We'll run **Ubuntu**, the most popular beginner-friendly flavor of Linux, using 
 An operating system is installed from an **ISO file** — a single file that represents an installation disk.
 
 1. Go to [ubuntu.com/download](https://ubuntu.com/download).
-2. On an **Apple Silicon** Mac (M1–M5), you need the **ARM64 / "for ARM"** build of **Ubuntu Desktop 26.04 LTS**. On an **Intel** Mac, get the regular 64-bit (AMD64) desktop image.
-3. It's a big download (several GB) — start it, then read the rest of this lesson while it finishes.
+2. On an **Apple Silicon** Mac (M1–M5), you need the **ARM64 / "for ARM"** build of **Ubuntu Server 26.04 LTS**. On an **Intel** Mac, get the regular 64-bit (AMD64) server image.
+3. It's a smaller download than the desktop edition (around 2–3 GB) — start it, then read the rest of this lesson while it finishes.
+
+> **Why Server, not Desktop?** Ubuntu Server has **no graphical desktop** — no windows, no mouse, just a text prompt. That's exactly how the real machines running the internet work, and it's the whole point of this course: getting comfortable driving a computer entirely by typing. It's also far lighter, so the VM is faster and uses less disk. Everything you'll do lives at the command line.
 
 > "LTS" means **Long-Term Support** — the stable version that gets 5 years of updates. Always pick LTS for learning; you want boring and reliable, not bleeding-edge.
 
@@ -37,25 +39,27 @@ An operating system is installed from an **ISO file** — a single file that rep
 2. Choose **Linux**.
 3. On an Apple Silicon Mac, tick **Use Apple Virtualization** if offered — it's smoother on modern macOS.
 4. **Boot ISO image** → Browse → select the Ubuntu `.iso` you downloaded.
-5. **Memory:** give it **4096 MB** (4 GB). If your Mac has 16 GB or more, **8192 MB** (8 GB) feels much nicer.
-6. **CPU cores:** the default is fine (4 is plenty).
-7. **Storage:** **30–40 GB**. This is a *maximum* size that grows as needed, so it won't immediately eat your disk.
+5. **Memory:** give it **2048 MB** (2 GB). A server has no desktop to run, so it needs far less than a graphical Ubuntu — 4 GB is generous if you have RAM to spare.
+6. **CPU cores:** the default is fine (2 is plenty for a server).
+7. **Storage:** **20 GB**. This is a *maximum* size that grows as needed, so it won't immediately eat your disk.
 8. Give it a name like `ubuntu-lab` and click **Save**.
 
 ## Step 3 — Install Ubuntu inside the VM
 
-Select your new VM and press the big **▶ Play** button. A window opens and boots the Ubuntu installer. Then, inside that window:
+Select your new VM and press the big **▶ Play** button. A window opens and boots the Ubuntu Server installer. It's **text-only** — you navigate with the **arrow keys**, <kbd>Tab</kbd>, and <kbd>Enter</kbd>, not the mouse. Work through the screens:
 
-1. Choose **Try or Install Ubuntu**.
-2. Pick your language and keyboard.
-3. Choose a **normal installation**.
-4. When it asks about disks, let it use the **entire disk** — remember, "the disk" here is the fake 30 GB one, *not* your Mac. This is completely safe.
-5. Create your user: a name, a username, and a **password you'll remember** (you'll type it a lot in Lesson 04). Turn on "log in automatically" if you like.
-6. Let it install (a few minutes) and, when prompted, **restart**. If it asks you to "remove the installation medium," just press <kbd>Enter</kbd> — UTM handles it.
+1. Pick your language and keyboard.
+2. Choose **Ubuntu Server** (the normal one, not "minimized").
+3. **Network:** leave it as-is — it picks up an address automatically.
+4. **Proxy / mirror:** skip both (just press <kbd>Enter</kbd> to accept the defaults).
+5. **Storage:** accept **use an entire disk** — remember, "the disk" here is the fake 20 GB one, *not* your Mac. This is completely safe. Confirm when it warns you it will erase it.
+6. **Profile setup:** enter your name, a server name, a username, and a **password you'll remember** (you'll type it a lot in Lesson 04).
+7. **Install OpenSSH server:** when you reach this screen, **tick it on** (press <kbd>Space</kbd>). This lets you log into the server from your Mac's Terminal later — you'll use it in Lesson 04.
+8. Skip the list of optional "snaps," let it install, and when it finishes choose **Reboot Now**. If it asks you to "remove the installation medium," just press <kbd>Enter</kbd> — UTM handles it.
 
-You now have a Linux desktop running in a window on your Mac. Poke around — open its Firefox, its files, its settings. Nothing you do here can touch your Mac.
+When it reboots, you'll land on a plain text **login prompt** — no desktop, no icons, just `ubuntu-lab login:`. Type your username, press <kbd>Enter</kbd>, type your password (the screen shows *nothing* as you type — that's normal), and press <kbd>Enter</kbd>. You're in. That black screen with a prompt **is** your server — the same experience as logging into a real machine in a data centre.
 
-> **If the screen resolution is tiny or things feel clunky**, that's normal at first. Inside Ubuntu, open its "Terminal" app and run `sudo apt update && sudo apt install -y spice-vdagent` then restart the VM — this improves the display and lets the window resize. (Don't worry about what those commands mean yet; Lesson 04 explains `apt` and `sudo`.)
+> **No desktop? That's intentional.** There's no Firefox, no Files app, no settings window — and there's nothing wrong. A server is pure command line. Everything in Lesson 04 happens right here at this prompt.
 
 ## Step 4 — The most important VM habit: snapshots
 
@@ -70,7 +74,7 @@ In UTM, with the VM selected, look for the snapshot option (in newer UTM it's in
 From here on you'll have **two** places to type commands, and it's important not to mix them up:
 
 - Your **Mac's Terminal** — controls your real Mac.
-- The **VM's Terminal** (inside the Ubuntu window) — controls the Linux guest.
+- The **VM's console** (the Ubuntu Server window) — controls the Linux guest.
 
 Lesson 04 lives almost entirely inside the **VM's** terminal. When in doubt, run `whoami` and `hostname` — they'll tell you which machine you're on.
 
@@ -78,11 +82,11 @@ Lesson 04 lives almost entirely inside the **VM's** terminal. When in doubt, run
 
 ## Challenge
 
-1. Download the correct Ubuntu 26.04 LTS ISO for your Mac's chip.
-2. Create and install an Ubuntu VM in UTM with at least 4 GB RAM and ~30 GB disk.
-3. Log into the Ubuntu desktop and open its Terminal app.
+1. Download the correct Ubuntu Server 26.04 LTS ISO for your Mac's chip.
+2. Create and install an Ubuntu Server VM in UTM with at least 2 GB RAM and ~20 GB disk, and tick **Install OpenSSH server** during setup.
+3. Log in at the console prompt and run `whoami` and `hostname` to confirm where you are.
 4. Take a snapshot named `fresh-install`.
-5. As a test of your nerve: inside the VM, create a file on the desktop, then restore your snapshot and watch it vanish. Now you *understand* snapshots.
+5. As a test of your nerve: inside the VM, create a file in your home folder (`touch test.txt`), then restore your snapshot and watch it vanish. Now you *understand* snapshots.
 
 Mark complete once you're staring at your own Linux machine. Next, we learn to run it like an admin.
 

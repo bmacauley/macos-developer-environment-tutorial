@@ -11,7 +11,7 @@ It's designed for a 16-year-old with some computer exposure, and it's built so t
 | 00 | Welcome & Your First Repo (git + GitHub basics) |
 | 01 | The Mac Foundation (Terminal, Command Line Tools, Homebrew) |
 | 02 | Command-Line Basics (navigation, files, pipes, permissions) |
-| 03 | Build Your Lab — the VM (UTM + Ubuntu, snapshots) |
+| 03 | Build Your Lab — the VM (UTM + Ubuntu Server, snapshots) |
 | 04 | Running a Linux Machine (sudo, apt, users, services, SSH) |
 | 05 | The Developer Toolkit (VS Code, git branches, Python, Node) |
 | 06 | AI & Claude Tools (prompting, agentic tools, MCP) |
